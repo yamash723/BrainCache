@@ -5,8 +5,9 @@ struct ContentView: View {
     @StateObject private var noteStorage = NoteStorage()
     @StateObject private var liveActivityManager = LiveActivityManager()
     
-    @State private var memoTitle = "QuickMemo"
+    @State private var memoTitle = "BrainCache"
     @State private var showingShareSheet = false
+    @State private var showingClearConfirmation = false
 
     @Environment(\.scenePhase) private var scenePhase
     
@@ -17,11 +18,24 @@ struct ContentView: View {
             }
             .navigationTitle("BrainCache")
             .toolbar {
+                
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {
                         shareContent()
                     }) {
                         Image(systemName: "square.and.arrow.up")
+                    }
+                }
+                
+                // クリアボタンを追加
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: {
+                        // 内容が空でない場合のみ確認ダイアログを表示
+                        if !noteStorage.noteContent.isEmpty {
+                            showingClearConfirmation = true
+                        }
+                    }) {
+                        Image(systemName: "trash")
                     }
                 }
             }
@@ -31,16 +45,33 @@ struct ContentView: View {
                 
                 // LiveActivityを自動管理
                 if #available(iOS 16.1, *) {
-                    liveActivityManager.autoManageLiveActivity(for: newValue)
+                    liveActivityManager.autoManageLiveActivity(for: newValue, title: memoTitle)
                 }
             }
             .onChange(of: scenePhase) { oldPhase, newPhase in
                 if #available(iOS 16.1, *) {
                     if newPhase == .background && !noteStorage.noteContent.isEmpty {
                         // バックグラウンドに移行したときにLiveActivityを開始
-                        liveActivityManager.autoManageLiveActivity(for: noteStorage.noteContent)
+                        liveActivityManager.autoManageLiveActivity(for: noteStorage.noteContent, title: memoTitle)
                     }
                 }
+            }
+            // 確認ダイアログを追加
+            .alert("メモをクリア", isPresented: $showingClearConfirmation) {
+                Button("キャンセル", role: .cancel) {}
+                Button("クリア", role: .destructive) {
+                    // メモの内容をクリア
+                    noteStorage.noteContent = ""
+                    // 保存を実行
+                    noteStorage.saveNote()
+                    
+                    // LiveActivityを終了
+                    if #available(iOS 16.1, *) {
+                        liveActivityManager.endLiveActivity()
+                    }
+                }
+            } message: {
+                Text("メモの内容をすべて削除しますか？この操作は元に戻せません。")
             }
         }
     }

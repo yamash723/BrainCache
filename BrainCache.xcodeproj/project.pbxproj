@@ -14,16 +14,17 @@
 		C72DBD882DAA0A9B00306152 /* MemoWidgetExtensionBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72DBD872DAA0A9B00306152 /* MemoWidgetExtensionBundle.swift */; };
 		C72DBD8A2DAA0A9B00306152 /* MemoWidgetExtensionLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72DBD892DAA0A9B00306152 /* MemoWidgetExtensionLiveActivity.swift */; };
 		C72DBD8C2DAA0A9B00306152 /* MemoWidgetExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72DBD8B2DAA0A9B00306152 /* MemoWidgetExtension.swift */; };
-		C72DBD8E2DAA0A9B00306152 /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72DBD8D2DAA0A9B00306152 /* AppIntent.swift */; };
 		C72DBD902DAA0A9C00306152 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C72DBD8F2DAA0A9C00306152 /* Assets.xcassets */; };
 		C72DBD942DAA0A9C00306152 /* MemoWidgetExtensionExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C72DBD802DAA0A9A00306152 /* MemoWidgetExtensionExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		C72DBD9B2DAA0C1500306152 /* MemoAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72DBD782DAA0A3300306152 /* MemoAttributes.swift */; };
 		C7AE346F2DAA0514004E4693 /* NoteStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AE346E2DAA0514004E4693 /* NoteStorage.swift */; };
 		C7AE34712DAA0540004E4693 /* MarkdownEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AE34702DAA0540004E4693 /* MarkdownEditorView.swift */; };
 		C7AE34752DAA056E004E4693 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AE34742DAA056E004E4693 /* ContentView.swift */; };
-		C7D6D8372DAA00040083F79C /* quick_memoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D6D8362DAA00040083F79C /* quick_memoApp.swift */; };
+		C7D6D8372DAA00040083F79C /* BrainCacheApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D6D8362DAA00040083F79C /* BrainCacheApp.swift */; };
 		C7D6D83D2DAA00050083F79C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7D6D83C2DAA00050083F79C /* Assets.xcassets */; };
 		C7D6D8402DAA00050083F79C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7D6D83F2DAA00050083F79C /* Preview Assets.xcassets */; };
+		C7DB393E2DAA3DB5004E734C /* ConfigurationAppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DB393D2DAA3DB5004E734C /* ConfigurationAppIntent.swift */; };
+		C7DB393F2DAA3DE8004E734C /* MemoAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72DBD782DAA0A3300306152 /* MemoAttributes.swift */; };
+		C7DB39402DAA3DEC004E734C /* LiveActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72DBD7A2DAA0A4800306152 /* LiveActivityManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +52,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		C72DBD772DAA099B00306152 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C71442AB2DAA48DE0088FC51 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		C72DBD772DAA099B00306152 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C72DBD782DAA0A3300306152 /* MemoAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoAttributes.swift; sourceTree = "<group>"; };
 		C72DBD7A2DAA0A4800306152 /* LiveActivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityManager.swift; sourceTree = "<group>"; };
 		C72DBD802DAA0A9A00306152 /* MemoWidgetExtensionExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MemoWidgetExtensionExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,18 +62,16 @@
 		C72DBD872DAA0A9B00306152 /* MemoWidgetExtensionBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoWidgetExtensionBundle.swift; sourceTree = "<group>"; };
 		C72DBD892DAA0A9B00306152 /* MemoWidgetExtensionLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoWidgetExtensionLiveActivity.swift; sourceTree = "<group>"; };
 		C72DBD8B2DAA0A9B00306152 /* MemoWidgetExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoWidgetExtension.swift; sourceTree = "<group>"; };
-		C72DBD8D2DAA0A9B00306152 /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
 		C72DBD8F2DAA0A9C00306152 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C72DBD912DAA0A9C00306152 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C72DBD992DAA0B9500306152 /* quick-memo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "quick-memo.entitlements"; sourceTree = "<group>"; };
-		C72DBD9A2DAA0BB300306152 /* MemoWidgetExtensionExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MemoWidgetExtensionExtension.entitlements; sourceTree = "<group>"; };
 		C7AE346E2DAA0514004E4693 /* NoteStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteStorage.swift; sourceTree = "<group>"; };
 		C7AE34702DAA0540004E4693 /* MarkdownEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownEditorView.swift; sourceTree = "<group>"; };
 		C7AE34742DAA056E004E4693 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C7D6D8332DAA00040083F79C /* BrainCache.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrainCache.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C7D6D8362DAA00040083F79C /* quick_memoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = quick_memoApp.swift; sourceTree = "<group>"; };
+		C7D6D8362DAA00040083F79C /* BrainCacheApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainCacheApp.swift; sourceTree = "<group>"; };
 		C7D6D83C2DAA00050083F79C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C7D6D83F2DAA00050083F79C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C7DB393D2DAA3DB5004E734C /* ConfigurationAppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationAppIntent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,9 +109,8 @@
 				C72DBD872DAA0A9B00306152 /* MemoWidgetExtensionBundle.swift */,
 				C72DBD892DAA0A9B00306152 /* MemoWidgetExtensionLiveActivity.swift */,
 				C72DBD8B2DAA0A9B00306152 /* MemoWidgetExtension.swift */,
-				C72DBD8D2DAA0A9B00306152 /* AppIntent.swift */,
-				C72DBD8F2DAA0A9C00306152 /* Assets.xcassets */,
-				C72DBD912DAA0A9C00306152 /* Info.plist */,
+				C7DB393D2DAA3DB5004E734C /* ConfigurationAppIntent.swift */,
+				C7DB393C2DAA3B19004E734C /* Resources */,
 			);
 			path = MemoWidgetExtension;
 			sourceTree = "<group>";
@@ -119,7 +118,7 @@
 		C7D6D82A2DAA00040083F79C = {
 			isa = PBXGroup;
 			children = (
-				C72DBD9A2DAA0BB300306152 /* MemoWidgetExtensionExtension.entitlements */,
+				C71442AB2DAA48DE0088FC51 /* README.md */,
 				C7D6D8352DAA00040083F79C /* BrainCache */,
 				C72DBD862DAA0A9B00306152 /* MemoWidgetExtension */,
 				C72DBD812DAA0A9A00306152 /* Frameworks */,
@@ -139,16 +138,12 @@
 		C7D6D8352DAA00040083F79C /* BrainCache */ = {
 			isa = PBXGroup;
 			children = (
-				C72DBD992DAA0B9500306152 /* quick-memo.entitlements */,
-				C72DBD772DAA099B00306152 /* Info.plist */,
-				C7D6D8362DAA00040083F79C /* quick_memoApp.swift */,
-				C7AE34742DAA056E004E4693 /* ContentView.swift */,
-				C7D6D83C2DAA00050083F79C /* Assets.xcassets */,
+				C7DB39372DAA3A80004E734C /* App */,
+				C7DB39382DAA3A8D004E734C /* Views */,
+				C7DB39392DAA3A97004E734C /* Models */,
+				C7DB393A2DAA3A9D004E734C /* Managers */,
+				C7DB393B2DAA3AB4004E734C /* Resources */,
 				C7D6D83E2DAA00050083F79C /* Preview Content */,
-				C7AE346E2DAA0514004E4693 /* NoteStorage.swift */,
-				C7AE34702DAA0540004E4693 /* MarkdownEditorView.swift */,
-				C72DBD782DAA0A3300306152 /* MemoAttributes.swift */,
-				C72DBD7A2DAA0A4800306152 /* LiveActivityManager.swift */,
 			);
 			path = BrainCache;
 			sourceTree = "<group>";
@@ -159,6 +154,58 @@
 				C7D6D83F2DAA00050083F79C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C7DB39372DAA3A80004E734C /* App */ = {
+			isa = PBXGroup;
+			children = (
+				C7D6D8362DAA00040083F79C /* BrainCacheApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		C7DB39382DAA3A8D004E734C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C7AE34702DAA0540004E4693 /* MarkdownEditorView.swift */,
+				C7AE34742DAA056E004E4693 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C7DB39392DAA3A97004E734C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C7AE346E2DAA0514004E4693 /* NoteStorage.swift */,
+				C72DBD782DAA0A3300306152 /* MemoAttributes.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C7DB393A2DAA3A9D004E734C /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				C72DBD7A2DAA0A4800306152 /* LiveActivityManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		C7DB393B2DAA3AB4004E734C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C72DBD772DAA099B00306152 /* Info.plist */,
+				C7D6D83C2DAA00050083F79C /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C7DB393C2DAA3B19004E734C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C72DBD8F2DAA0A9C00306152 /* Assets.xcassets */,
+				C72DBD912DAA0A9C00306152 /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,7 +265,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C7D6D82E2DAA00040083F79C /* Build configuration list for PBXProject "quick-memo" */;
+			buildConfigurationList = C7D6D82E2DAA00040083F79C /* Build configuration list for PBXProject "BrainCache" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -263,9 +310,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C72DBD8A2DAA0A9B00306152 /* MemoWidgetExtensionLiveActivity.swift in Sources */,
-				C72DBD8E2DAA0A9B00306152 /* AppIntent.swift in Sources */,
-				C72DBD9B2DAA0C1500306152 /* MemoAttributes.swift in Sources */,
 				C72DBD8C2DAA0A9B00306152 /* MemoWidgetExtension.swift in Sources */,
+				C7DB39402DAA3DEC004E734C /* LiveActivityManager.swift in Sources */,
+				C7DB393F2DAA3DE8004E734C /* MemoAttributes.swift in Sources */,
+				C7DB393E2DAA3DB5004E734C /* ConfigurationAppIntent.swift in Sources */,
 				C72DBD882DAA0A9B00306152 /* MemoWidgetExtensionBundle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,7 +322,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7D6D8372DAA00040083F79C /* quick_memoApp.swift in Sources */,
+				C7D6D8372DAA00040083F79C /* BrainCacheApp.swift in Sources */,
 				C7AE34752DAA056E004E4693 /* ContentView.swift in Sources */,
 				C72DBD792DAA0A3300306152 /* MemoAttributes.swift in Sources */,
 				C7AE346F2DAA0514004E4693 /* NoteStorage.swift in Sources */,
@@ -304,16 +352,18 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = M5GYC7DY7Q;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MemoWidgetExtension/Info.plist;
+				INFOPLIST_FILE = MemoWidgetExtension/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = MemoWidgetExtension;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
+				INFOPLIST_KEY_NSSupportsLiveActivitiesFrequentUpdates = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "nappa-labo.quick-memo.MemoWidgetExtension";
+				PRODUCT_BUNDLE_IDENTIFIER = "nappa-labo.brain-cache.MemoWidgetExtension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -332,16 +382,18 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = M5GYC7DY7Q;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MemoWidgetExtension/Info.plist;
+				INFOPLIST_FILE = MemoWidgetExtension/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = MemoWidgetExtension;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
+				INFOPLIST_KEY_NSSupportsLiveActivitiesFrequentUpdates = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "nappa-labo.quick-memo.MemoWidgetExtension";
+				PRODUCT_BUNDLE_IDENTIFIER = "nappa-labo.brain-cache.MemoWidgetExtension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -475,14 +527,15 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "quick-memo/quick-memo.entitlements";
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_ENTITLEMENTS = BrainCache/BrainCache.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"quick-memo/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"BrainCache/Preview Content\"";
 				DEVELOPMENT_TEAM = M5GYC7DY7Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "quick-memo/Info.plist";
+				INFOPLIST_FILE = BrainCache/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -493,7 +546,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "nappa-labo.quick-memo";
+				PRODUCT_BUNDLE_IDENTIFIER = "nappa-labo.brain-cache";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -507,14 +560,15 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "quick-memo/quick-memo.entitlements";
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_ENTITLEMENTS = BrainCache/BrainCache.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"quick-memo/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"BrainCache/Preview Content\"";
 				DEVELOPMENT_TEAM = M5GYC7DY7Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "quick-memo/Info.plist";
+				INFOPLIST_FILE = BrainCache/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -525,7 +579,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "nappa-labo.quick-memo";
+				PRODUCT_BUNDLE_IDENTIFIER = "nappa-labo.brain-cache";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -545,7 +599,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C7D6D82E2DAA00040083F79C /* Build configuration list for PBXProject "quick-memo" */ = {
+		C7D6D82E2DAA00040083F79C /* Build configuration list for PBXProject "BrainCache" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C7D6D8572DAA00050083F79C /* Debug */,

@@ -1,80 +1,82 @@
-//
-//  MemoWidgetExtensionLiveActivity.swift
-//  MemoWidgetExtension
-//
-//  Created by 山下秀平 on R 7/04/12.
-//
-
-import ActivityKit
 import WidgetKit
 import SwiftUI
-
-struct MemoWidgetExtensionAttributes: ActivityAttributes {
-    public struct ContentState: Codable, Hashable {
-        // Dynamic stateful properties about your activity go here!
-        var emoji: String
-    }
-
-    // Fixed non-changing properties about your activity go here!
-    var name: String
-}
+import ActivityKit
 
 struct MemoWidgetExtensionLiveActivity: Widget {
     var body: some WidgetConfiguration {
-        ActivityConfiguration(for: MemoWidgetExtensionAttributes.self) { context in
-            // Lock screen/banner UI goes here
-            VStack {
-                Text("Hello \(context.state.emoji)")
-            }
-            .activityBackgroundTint(Color.cyan)
-            .activitySystemActionForegroundColor(Color.black)
-
+        ActivityConfiguration(for: MemoAttributes.self) { context in
+            // ロック画面表示用のビュー
+            LockScreenLiveActivityView(context: context)
         } dynamicIsland: { context in
+            // Dynamic Island用のビュー
             DynamicIsland {
-                // Expanded UI goes here.  Compose the expanded UI through
-                // various regions, like leading/trailing/center/bottom
+                // 展開されていない状態
                 DynamicIslandExpandedRegion(.leading) {
-                    Text("Leading")
+                    Text(context.attributes.title)
+                        .font(.headline)
                 }
+                
                 DynamicIslandExpandedRegion(.trailing) {
-                    Text("Trailing")
+                    Image(systemName: "note.text")
                 }
+                
+                DynamicIslandExpandedRegion(.center) {
+                    Text(context.state.memoContent)
+                        .lineLimit(2)
+                }
+                
                 DynamicIslandExpandedRegion(.bottom) {
-                    Text("Bottom \(context.state.emoji)")
-                    // more content
+                    Text("タップしてメモを開く")
+                        .font(.caption)
                 }
             } compactLeading: {
-                Text("L")
+                Image(systemName: "note.text")
             } compactTrailing: {
-                Text("T \(context.state.emoji)")
+                Text(context.attributes.title.prefix(1))
             } minimal: {
-                Text(context.state.emoji)
+                Image(systemName: "note.text")
             }
-            .widgetURL(URL(string: "http://www.apple.com"))
-            .keylineTint(Color.red)
         }
     }
 }
 
-extension MemoWidgetExtensionAttributes {
-    fileprivate static var preview: MemoWidgetExtensionAttributes {
-        MemoWidgetExtensionAttributes(name: "World")
+struct LockScreenLiveActivityView: View {
+    let context: ActivityViewContext<MemoAttributes>
+    
+    var body: some View {
+        VStack {
+            HStack {
+                Image(systemName: "note.text")
+                    .foregroundColor(.accentColor)
+                
+                Text(context.attributes.title)
+                    .font(.headline)
+                
+                Spacer()
+            }
+            .padding(.bottom, 4)
+            
+            Text(context.state.memoContent)
+                .font(.body)
+                .lineLimit(3)
+                .multilineTextAlignment(.leading)
+                .frame(maxWidth: .infinity, alignment: .leading)
+            
+            Spacer()
+            
+            Text("タップしてメモを開く")
+                .font(.caption)
+                .frame(maxWidth: .infinity, alignment: .trailing)
+        }
+        .padding()
+        .activityBackgroundTint(Color.secondarySystemBackground)
+        .activitySystemActionForegroundColor(Color.black)
     }
 }
 
-extension MemoWidgetExtensionAttributes.ContentState {
-    fileprivate static var smiley: MemoWidgetExtensionAttributes.ContentState {
-        MemoWidgetExtensionAttributes.ContentState(emoji: "😀")
-     }
-     
-     fileprivate static var starEyes: MemoWidgetExtensionAttributes.ContentState {
-         MemoWidgetExtensionAttributes.ContentState(emoji: "🤩")
-     }
-}
-
-#Preview("Notification", as: .content, using: MemoWidgetExtensionAttributes.preview) {
-   MemoWidgetExtensionLiveActivity()
-} contentStates: {
-    MemoWidgetExtensionAttributes.ContentState.smiley
-    MemoWidgetExtensionAttributes.ContentState.starEyes
+// iOS 16以前との互換性のため
+extension Color {
+    static var secondarySystemBackground: Color {
+        Color(UIColor.secondarySystemBackground)
+    }
 }

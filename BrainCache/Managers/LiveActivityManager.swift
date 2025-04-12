@@ -23,6 +23,7 @@ class LiveActivityManager: ObservableObject {
     }
 
     // 自動管理のための新しいメソッド
+    @MainActor
     @available(iOS 16.1, *)
     func autoManageLiveActivity(for content: String, title: String = "クイックメモ") {
         if content.isEmpty {
@@ -40,6 +41,7 @@ class LiveActivityManager: ObservableObject {
         }
     }
     
+    @MainActor
     func startLiveActivity(title: String, content: String) {
         // iOS 16.1以降でのみ利用可能
         guard ActivityAuthorizationInfo().areActivitiesEnabled else {
@@ -74,6 +76,7 @@ class LiveActivityManager: ObservableObject {
         }
     }
     
+    @MainActor
     func updateLiveActivity(content: String) {
         guard let activity = activity else { return }
         
@@ -92,6 +95,7 @@ class LiveActivityManager: ObservableObject {
         }
     }
     
+    @MainActor
     func endLiveActivity() {
         guard let activity = activity else { return }
         

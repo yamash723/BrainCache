@@ -1,10 +1,8 @@
 import SwiftUI
-import UIKit
 
 struct MarkdownEditorView: View {
     @Binding var text: String
     @FocusState private var isFocused: Bool
-    @State private var selectedRange: NSRange?
     @State private var lastText: String = ""
     
     var body: some View {
@@ -15,10 +13,6 @@ struct MarkdownEditorView: View {
             .onChange(of: text) { oldValue, newValue in
                 handleTextChange(oldText: oldValue, newText: newValue)
             }
-            .background(
-                // 選択範囲を取得するための隠しUITextView
-                SelectedTextTracker(text: text, selectedRange: $selectedRange)
-            )
             .toolbar {
                 ToolbarItemGroup(placement: .keyboard) {
                     Button(action: { insertBullet() }) {
@@ -156,115 +150,27 @@ struct MarkdownEditorView: View {
     }
     
     private func insertBullet() {
-        if let range = selectedRange, range.length > 0 {
-            // テキストが選択されている場合
-            let nsText = text as NSString
-            let selectedText = nsText.substring(with: range)
-            let formattedText = "- " + selectedText
-            
-            // 選択範囲を置き換え
-            let newText = nsText.replacingCharacters(in: range, with: formattedText)
-            text = newText
-        } else {
-            // 選択がない場合は現在位置に挿入
-            text.append("- ")
-        }
+        // 現在位置に挿入
+        text.append("- ")
     }
     
     private func insertNumberedList() {
-        if let range = selectedRange, range.length > 0 {
-            // テキストが選択されている場合
-            let nsText = text as NSString
-            let selectedText = nsText.substring(with: range)
-            let formattedText = "1. " + selectedText
-            
-            // 選択範囲を置き換え
-            let newText = nsText.replacingCharacters(in: range, with: formattedText)
-            text = newText
-        } else {
-            // 選択がない場合は現在位置に挿入
-            text.append("1. ")
-        }
+        // 現在位置に挿入
+        text.append("1. ")
     }
     
     private func insertHeading() {
-        if let range = selectedRange, range.length > 0 {
-            // テキストが選択されている場合
-            let nsText = text as NSString
-            let selectedText = nsText.substring(with: range)
-            let formattedText = "## " + selectedText
-            
-            // 選択範囲を置き換え
-            let newText = nsText.replacingCharacters(in: range, with: formattedText)
-            text = newText
-        } else {
-            // 選択がない場合は現在位置に挿入
-            text.append("## ")
-        }
+        // 現在位置に挿入
+        text.append("# ")
     }
     
     private func formatBold() {
-        if let range = selectedRange, range.length > 0 {
-            // テキストが選択されている場合
-            let nsText = text as NSString
-            let selectedText = nsText.substring(with: range)
-            let formattedText = "**" + selectedText + "**"
-            
-            // 選択範囲を置き換え
-            let newText = nsText.replacingCharacters(in: range, with: formattedText)
-            text = newText
-        } else {
-            // 選択がない場合は太字のプレースホルダーを挿入
-            text.append("**太字**")
-        }
+        // 末尾に追加
+        text.append("****")
     }
     
     private func formatItalic() {
-        if let range = selectedRange, range.length > 0 {
-            // テキストが選択されている場合
-            let nsText = text as NSString
-            let selectedText = nsText.substring(with: range)
-            let formattedText = "*" + selectedText + "*"
-            
-            // 選択範囲を置き換え
-            let newText = nsText.replacingCharacters(in: range, with: formattedText)
-            text = newText
-        } else {
-            // 選択がない場合は斜体のプレースホルダーを挿入
-            text.append("*斜体*")
-        }
-    }
-}
-
-// 選択範囲を取得するためのUIViewRepresentable
-struct SelectedTextTracker: UIViewRepresentable {
-    let text: String
-    @Binding var selectedRange: NSRange?
-    
-    func makeUIView(context: Context) -> UITextView {
-        let textView = UITextView()
-        textView.isHidden = true
-        textView.delegate = context.coordinator
-        return textView
-    }
-    
-    func updateUIView(_ uiView: UITextView, context: Context) {
-        uiView.text = text
-    }
-    
-    func makeCoordinator() -> Coordinator {
-        Coordinator(self)
-    }
-    
-    class Coordinator: NSObject, UITextViewDelegate {
-        var parent: SelectedTextTracker
-        
-        init(_ parent: SelectedTextTracker) {
-            self.parent = parent
-        }
-        
-        func textViewDidChangeSelection(_ textView: UITextView) {
-            parent.selectedRange = textView.selectedRange
-        }
+        // 末尾に追加
+        text.append("**")
     }
 }
